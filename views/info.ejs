@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MY APP</title>
+</head>
+<body>
+
+	<h1 data-position="header">Dashboard</h1>
+
+</section>
+
+	<h2> User Details </h2>
+
+	<ul class="user">
+
+   		 <li class="info">
+    		Id:
+      		<span><%= user._id %></span>
+      
+       		<br>Name:
+      		<span><%= user.name %></span>
+      
+      		<br>Email :
+		    <span><%= user.email %></span>
+      
+      		<br>Address :
+      		<span><%= user.Address %></span>
+      
+      		<br>Gender :
+		    <span><%= user.gender %></span>
+
+          <br>Hobbies :
+          <span><%= user.hobbies %></span>
+      	
+      		<br>
+      		<br>
+    
+    	</li>
+
+	</ul>
+
+<h1>Your images</h1>
+<% for(var i = 0; i < user.photos.length; i++) {%>
+      <img src="<%= user.photos[i] %>">
+
+<% } %>
+
+
+<br><br><br>
+
+<h1>Upload Image</h1>
+ 
+<form action="/upload" method="post" enctype="multipart/form-data">
+        <input type="file" accept="image/*" name="photo" >
+        <input type="submit" value="upload">
+</form>
+<br>
+<form method="POST" action='/logout'>
+      
+      <button type="submit">log out</button>
+    
+</form>
+<span></span>
+</body>
+</html>
